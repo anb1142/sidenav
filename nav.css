@@ -121,6 +121,7 @@ nav > section > .ham > p {
 	margin-left: 7vh;
 	opacity: 0;
 	pointer-events: none;
+	font-weight: 600;
 }
 
 nav > input:checked ~ section {
