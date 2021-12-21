@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #d2dce1;
+}
+nav > section {
+	width: 8vh;
+	height: 100vh;
+	background: #0c111f;
+	transition: width 0.2s ease;
+	font-family: "Source Sans Pro";
+}
+
+nav > section > .links {
+	display: flex;
+	flex-direction: column;
+	margin: 0 1vh;
+}
+
+nav > section > .links > a {
+	width: 6vh;
+	height: 6vh;
+	display: flex;
+	position: relative;
+	margin: 1vh auto;
+	text-decoration: none;
+	transition: width 0.7s;
+}
+
+nav > section > .links > a > i {
+	width: 6vh;
+	height: 6vh;
+	color: #ccc;
+	border-radius: 1vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 2.5vh;
+	transition: color 0.3s;
+}
+
+nav > section > .links > a > span {
+	position: absolute;
+	left: 7.5vh;
+	top: 0.8vh;
+	width: 14vh;
+	background: #fff;
+	color: #000;
+	z-index: 1;
+	padding: 1vh;
+	border-radius: 1vh;
+	text-align: center;
+	font-weight: 600;
+	font-size: 2vh;
+
+	transform: translateX(-20vh) scale(0);
+	transition: transform 0.3s;
+	z-index: -1;
+}
+
+nav > section > .links > a > i:hover {
+	color: #fff;
+}
+
+nav > section > .links > a:hover > span {
+	transform: none;
+	box-shadow: -0.3vh 0.6vh 1vh #00000042;
+}
+
+nav > section > .links > a.active > i {
+	background: #fff;
+	color: #0c111f;
+}
+nav > input {
+	position: absolute;
+	height: 6vh;
+	width: 8vh;
+	opacity: 0;
+	z-index: 1;
+}
+
+nav > section > .ham {
+	color: #fff;
+	width: 100%;
+	width: 6vh;
+	height: 6vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	position: relative;
+}
+
+nav > section > .ham > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 3vh;
+	width: 2.8vh;
+	left: 2.5vh;
+	position: absolute;
+}
+
+nav > section > .ham > div > span {
+	height: 10%;
+	width: 100%;
+	background: white;
+	align-items: center;
+	transition: all 0.3s;
+}
+
+nav > section > .ham > p {
+	margin-left: 7vh;
+	opacity: 0;
+	pointer-events: none;
+}
+
+nav > input:checked ~ section {
+	width: 24vh;
+}
+nav > input:checked ~ section > .ham > p {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+nav > input:checked ~ section > .links > a {
+	width: 22vh;
+}
+nav > input:checked ~ section > .links > a > span {
+	z-index: 1;
+	transform: none;
+	display: initial;
+}
+
+nav > input:checked ~ section > .ham > div > span:nth-child(1) {
+	transform: rotate(-45deg);
+	transform-origin: 100% 0%;
+	margin-left: -0.5vh;
+}
+
+nav > input:checked ~ section > .ham > div > span:nth-child(2) {
+	opacity: 0;
+}
+
+nav > input:checked ~ section > .ham > div > span:nth-child(3) {
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+	margin-left: -0.5vh;
+}
